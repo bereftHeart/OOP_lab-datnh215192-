@@ -15,6 +15,6 @@ public class ex_225 {
         System.out.println("the sum is: " + sum);
         System.out.println("The difference is: " + diff);
         System.out.println("The product is: " + product);
-        System.out.println("The quotient");
+        System.out.println("The quotient is: " + quotient);
     }
 }
