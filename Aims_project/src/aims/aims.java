@@ -178,7 +178,8 @@ public class aims {
 //	--------------------------------------------------------------------------
 //	--------------------------------------------------------------------------
 	public static void main(String[] args) {
-		manage_store.Import();
+		manage_store new_store = new manage_store();
+		new_store.Import();
 		
 		int option1 = -1;
 		while (option1!=0) {
@@ -194,7 +195,7 @@ public class aims {
 //	----------------------------1---View store---------------------------------------
 				int option1_1=-1;
 				while (option1_1!=0) {
-					store.showStore();
+					new_store.StoreScreen();
 					storeMenu();
 					input2 = new Scanner(System.in);
 					do {
@@ -309,13 +310,13 @@ public class aims {
 						break;
 					case 1:
 //			-------2-1---add media to store----------
-						manage_store.showAvailableMedia();
+						new_store.showAvailableMedia();
 						System.out.print("Enter media's title to add to store: ");
 						input_title = new Scanner(System.in);
 						String title = input_title.nextLine();
 						boolean title_valid=false;
 						
-						for (media m : manage_store.avaiable_media) {
+						for (media m : new_store.store.getItemsInStore()) {
 							if (m.getTitle().equalsIgnoreCase(title)) {
 								title_valid = true;
 								store.addMedia(m);
@@ -334,7 +335,7 @@ public class aims {
 						title = input_title.nextLine();
 						title_valid=false;
 						
-						for (media m : manage_store.avaiable_media) {
+						for (media m : new_store.store.getItemsInStore()) {
 							if (m.getTitle().equalsIgnoreCase(title)) {
 								title_valid = true;
 								store.removeMedia(m);

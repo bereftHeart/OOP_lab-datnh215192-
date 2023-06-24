@@ -6,4 +6,5 @@
  *
  */
 module Aims_project {
+	requires java.desktop;
 }

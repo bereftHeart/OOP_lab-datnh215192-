@@ -1,11 +1,14 @@
 package aims;
 import java.util.ArrayList;
 import java.util.List;
+
+import Aims_Screen.View_Store;
 import media.*;
 
 public class manage_store {
-	public static List<media> avaiable_media = new ArrayList<media>();
+	public static store store = new store();
 
+	//	create some media objects in the store
 	public static void Import() {
 		List<String> authors = new ArrayList<String>();
         authors.add("author01");
@@ -40,36 +43,34 @@ public class manage_store {
         tracks.add(track_03);
         media CD_04 = new CompactDisc("CD04","phim ngon lu","director02",9.9f,"artist02",tracks);
         
-        
-        
-        avaiable_media.add(book_01);
-        avaiable_media.add(book_02);
-        avaiable_media.add(book_03);
-        avaiable_media.add(book_04);
-        avaiable_media.add(book_05);
-        
-        avaiable_media.add(DVD_01);
-        avaiable_media.add(DVD_02);
-        avaiable_media.add(DVD_03);
-        avaiable_media.add(DVD_04);
-        avaiable_media.add(DVD_05);
-        
-        avaiable_media.add(CD_01);
-        avaiable_media.add(CD_02);
-        avaiable_media.add(CD_03);
-        avaiable_media.add(CD_04);
-        
-        
         store.addMedia(book_01);
         store.addMedia(book_02);
+        store.addMedia(book_03);
+        store.addMedia(book_04);
+        store.addMedia(book_05);
         store.addMedia(DVD_01);
         store.addMedia(DVD_02);
+        store.addMedia(DVD_03);
+        store.addMedia(DVD_04);
         store.addMedia(CD_01);
         store.addMedia(CD_02);
+        store.addMedia(CD_03);
+        store.addMedia(CD_04);
+        
 	}
 	
 	public static void showAvailableMedia() {
-		for (media m : avaiable_media)
+		for (media m : store.getItemsInStore())
 			System.out.println(m.toString());
+	}
+	
+	public static void StoreScreen() {
+        new View_Store(store);
+    }
+	
+	public static void main(String[] args) {
+		Import();
+//        showAvailableMedia();
+        StoreScreen();
 	}
 }

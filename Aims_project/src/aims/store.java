@@ -6,6 +6,14 @@ import media.*;
 public class store {
 	public static List<media> itemsInStore = new ArrayList<media>();
 	
+	public static List<media> getItemsInStore() {
+		return itemsInStore;
+	}
+
+	public static void setItemsInStore(List<media> itemsInStore) {
+		store.itemsInStore = itemsInStore;
+	}
+// add media
 	public static void addMedia(media media) {
  		if (itemsInStore.indexOf(media)!=-1) {
  			System.out.println("Error! The media " + media.getTitle() + " is already exist!");
@@ -13,7 +21,7 @@ public class store {
  		}
  		itemsInStore.add(media);
 	}
-	
+//	remove media
 	public static void removeMedia(media media) {
 		if (itemsInStore.indexOf(media)==-1) {
 			System.out.println("Error 404! The media " + media.getTitle() + " is not found!");
