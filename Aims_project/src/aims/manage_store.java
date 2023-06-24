@@ -70,7 +70,6 @@ public class manage_store {
 	
 	public static void main(String[] args) {
 		Import();
-//        showAvailableMedia();
         StoreScreen();
 	}
 }

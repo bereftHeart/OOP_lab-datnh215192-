@@ -1,12 +1,8 @@
-/**
- * 
- */
-/**
- * 
- */
-module GUI_project {
-	requires java.desktop;
+module GUI_Project {
+	requires javafx.controls;
 	requires javafx.graphics;
 	requires javafx.fxml;
-	requires javafx.controls;
+	requires javafx.base;
+	
+	opens Global_ICT_javaFX to javafx.graphics, javafx.fxml;
 }
