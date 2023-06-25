@@ -15,7 +15,7 @@ public class Painter extends Application {
 //			Scene scene = new Scene(root,400,400);
 //			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			Parent root = FXMLLoader.load(getClass().getResource("Painter.fxml"));
-			Scene scene = new Scene(root);
+			Scene scene = new Scene(root, 640, 480);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

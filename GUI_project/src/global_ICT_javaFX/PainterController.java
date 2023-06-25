@@ -19,11 +19,25 @@ public class PainterController {
 
     @FXML
     private Pane drawingAreaPane;
-
+    
     @FXML
     private ToggleGroup identical;
 
     private Color color = Color.BLUE;
+    
+    private int size = 2;
+    
+    @FXML
+    void EraserSelected(MouseEvent event) {
+    	color = Color.WHITE;
+    	size = 12;
+    }
+
+    @FXML
+    void PenSelected(MouseEvent event) {
+    	color = Color.BLUE;
+    	size = 2;
+    }
     
     @FXML
     void clearButtonPressed(ActionEvent event) {
@@ -32,7 +46,7 @@ public class PainterController {
 
     @FXML
     void drawingAreaMouseDragged(MouseEvent event) {
-		Circle newCircle = new Circle(event.getX(), event.getY(), 1, color);
+		Circle newCircle = new Circle(event.getX(), event.getY(), size, color);
         drawingAreaPane.getChildren().add(newCircle);
     }
 
